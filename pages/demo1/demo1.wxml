@@ -1,0 +1,25 @@
+<!--pages/demo1/demo1.wxml-->
+<!-- 
+    1.需要给input标签绑定 input事件 -- 实时获取input的变化
+        绑定的关键字 bindinput
+    2.如何获取输入框的值
+        通过事件源对象来获取
+        e.detail.value
+    3.把输入框的值 赋值到 data中
+        改变data里面的数据应按照下面的方法写
+        this.setData({
+            num:e.detail.value
+        })
+    4.需要给按钮添加一个点击事件
+        bindtap
+        无法在小程序当中的 事件中 直接传参
+        通过自定义属性的方法来传递参数
+ -->
+<input type="text" bindinput="handleInput" />
+<button data-operation="{{1}}" bindtap="handletap">+</button>
+<button data-operation="{{-1}}" bindtap="handletap">-</button>
+<view>{{num}}</view>
+
+<input type="text" bindinput="handleInput(100)" />
+
+  
